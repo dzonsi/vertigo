@@ -1,0 +1,10 @@
+// functions, must came before variables
+@import '../node_modules/bootstrap/scss/functions';
+// our custom variables file
+@import './variables';
+// bootstrap file that compiles the css
+@import '../node_modules/bootstrap/scss/bootstrap';
+// disable border on button active and focus state
+.btn:active, .btn:focus, .btn:active:focus, .btn.active:focus, button {
+  outline: none !important;
+}
