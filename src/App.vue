@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
     <router-view />
   </div>
 </template>
@@ -15,9 +15,8 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-#app {
+.app {
   width: 100%;
   height: 100%;
-  position: relative;
 }
 </style>

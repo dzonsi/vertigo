@@ -18,7 +18,14 @@ Vue.use(VueSpinners)
 import VueFullPage from 'vue-fullpage.js'
 Vue.use(VueFullPage)
 
+// aos
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 new Vue({
+  created() {
+    AOS.init()
+  },
   router,
   store,
   render: h => h(App)
