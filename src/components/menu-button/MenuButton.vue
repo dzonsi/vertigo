@@ -6,12 +6,12 @@
     }"
     @click="toggleSideNavbar"
   >
-    <div>
+    <div data-aos="fade-down" data-aos-once="true">
       <span class="icon-bar icon-bar-first"></span>
       <span class="icon-bar icon-bar-second"></span>
       <span class="icon-bar icon-bar-third"></span>
     </div>
-    <span class="sidebar-toggle-text">MENU</span>
+    <span class="sidebar-toggle-text" data-aos="fade-down" data-aos-once="true">MENU</span>
   </button>
 </template>
 

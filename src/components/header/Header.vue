@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <div class="navbar-header">
+    <div class="navbar-header" data-aos="fade-down" data-aos-once="true">
       <router-link to="/" class="navbar-link">
         <LogoSmall></LogoSmall>
       </router-link>
