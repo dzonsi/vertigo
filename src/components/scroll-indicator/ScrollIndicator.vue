@@ -9,7 +9,6 @@ export default {
 </script>
 
 <style lang="scss">
-/* missing class for opacity 0 on first page */
 .scroll-indicator {
   width: 30px;
   height: 47px;
@@ -21,6 +20,11 @@ export default {
   left: 44px;
   z-index: 2;
   background-position: 30px 0;
+}
+.fp-viewing-home {
+  & .scroll-indicator {
+    opacity: 0;
+  }
 }
 @keyframes animate-mouse {
   0% {
