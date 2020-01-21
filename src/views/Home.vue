@@ -4,8 +4,8 @@
     <menu-button></menu-button>
     <SideNavbar></SideNavbar>
     <full-page ref="fullpage" :options="options" id="fullpage">
-      <div class="section">
-        First section ...
+      <div class="section section-home">
+        <HomeSection></HomeSection>
       </div>
       <div class="section">
         Second section ...
@@ -28,6 +28,8 @@ import Header from '@/components/header/Header.vue'
 import SideNavbar from '@/components/side-navbar/SideNavbar.vue'
 import ScrollIndicator from '@/components/scroll-indicator/ScrollIndicator.vue'
 import Footer from '@/components/footer/Footer.vue'
+import HomeSection from '@/components/home-section/HomeSection.vue'
+
 import { mapMutations } from 'vuex'
 
 export default {
@@ -37,15 +39,15 @@ export default {
     Header,
     SideNavbar,
     ScrollIndicator,
-    Footer
+    Footer,
+    HomeSection
   },
   data() {
     return {
       options: {
         licenseKey: null,
-        menu: '#menu',
-        anchors: ['page1', 'page2', 'page3', 'page4'],
-        sectionsColor: ['#41b883', '#ff5f45', '#0798ec'],
+        anchors: ['home', 'page2', 'page3', 'footer'],
+        sectionsColor: ['#070707', '#ff5f45', '#0798ec'],
         onLeave: this.onLeave
       }
     }
@@ -58,7 +60,7 @@ export default {
       if (destination.isLast) {
         this.toggleFooter()
       }
-      if (origin.anchor == 'page4') {
+      if (origin.anchor == 'footer') {
         this.toggleFooter()
       }
     }
@@ -74,5 +76,12 @@ export default {
   & .fp-tableCell {
     height: auto !important;
   }
+}
+.section-home {
+  overflow: hidden;
+  color: $white;
+  background-image: url('../assets/earth.jpg');
+  background-position: center center;
+  background-size: cover;
 }
 </style>
