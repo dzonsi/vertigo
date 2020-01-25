@@ -90,33 +90,33 @@ export default {
     height: auto !important;
   }
 }
+.section {
+  &-home,
+  &-who-we-are,
+  &-what-we-do {
+    overflow: hidden;
+    color: $white;
+    background-color: #070707;
+  }
+  &-who-we-are,
+  &-what-we-do {
+    & .container {
+      padding: 0 30px;
+    }
+  }
+}
 .section-home {
-  overflow: hidden;
-  color: $white;
-  background-color: #070707;
   background-image: url('../assets/earth.jpg');
   background-position: center center;
   background-size: cover;
 }
 .section-who-we-are {
-  overflow: hidden;
-  color: $white;
-  background-color: #070707;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('../assets/who-we-are-bg.jpg') center / cover;
-  & .container {
-    padding: 0 30px;
-  }
 }
 .section-what-we-do {
-  overflow: hidden;
-  color: $white;
-  background-color: #070707;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('../assets/what-we-do-bg.jpg') center / cover;
-  & .container {
-    padding: 0 30px;
-  }
 }
 @include media-breakpoint-down(lg) {
   .section-who-we-are {
@@ -125,16 +125,22 @@ export default {
   }
 }
 @include media-breakpoint-down(xs) {
-  .section-who-we-are {
-    & .container {
-      padding: 0 20px;
+  .section {
+    &-who-we-are,
+    &-what-we-do {
+      & .container {
+        padding: 0 20px;
+      }
     }
   }
 }
 @include media-breakpoint-up(xl) {
-  .section-who-we-are {
-    & .container {
-      padding-left: 120px;
+  .section {
+    &-who-we-are,
+    &-what-we-do {
+      & .container {
+        padding-left: 120px;
+      }
     }
   }
 }
