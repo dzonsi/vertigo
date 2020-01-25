@@ -7,8 +7,8 @@
       <div class="section section-home">
         <HomeSection></HomeSection>
       </div>
-      <div class="section">
-        Second section ...
+      <div class="section section-who-we-are">
+        <WhoWeAre ref="whoWeAre"></WhoWeAre>
       </div>
       <div class="section">
         Third section ...
@@ -29,6 +29,7 @@ import SideNavbar from '@/components/side-navbar/SideNavbar.vue'
 import ScrollIndicator from '@/components/scroll-indicator/ScrollIndicator.vue'
 import Footer from '@/components/footer/Footer.vue'
 import HomeSection from '@/components/home-section/HomeSection.vue'
+import WhoWeAre from '@/components/who-we-are/WhoWeAre.vue'
 
 import { mapMutations } from 'vuex'
 
@@ -40,14 +41,15 @@ export default {
     SideNavbar,
     ScrollIndicator,
     Footer,
-    HomeSection
+    HomeSection,
+    WhoWeAre
   },
   data() {
     return {
       options: {
         licenseKey: null,
-        anchors: ['home', 'page2', 'page3', 'footer'],
-        sectionsColor: ['#070707', '#ff5f45', '#0798ec'],
+        anchors: ['home', 'who-we-are', 'what-we-do', 'footer'],
+        sectionsColor: ['#070707', '#070707', '#070707'],
         onLeave: this.onLeave
       }
     }
@@ -57,9 +59,20 @@ export default {
       toggleFooter: 'changeFooterStatus'
     }),
     onLeave(origin, destination, direction) {
+      /* animate description in WhoWeAre component */
+      if (
+        !this.$refs.whoWeAre.isAnimate &&
+        destination.anchor == 'who-we-are'
+      ) {
+        this.$refs.whoWeAre.changeStatus()
+        return
+      }
+      /* show footer */
       if (destination.isLast) {
         this.toggleFooter()
+        return
       }
+      /* hide footer */
       if (origin.anchor == 'footer') {
         this.toggleFooter()
       }
@@ -80,8 +93,39 @@ export default {
 .section-home {
   overflow: hidden;
   color: $white;
+  background-color: #070707;
   background-image: url('../assets/earth.jpg');
   background-position: center center;
   background-size: cover;
+}
+.section-who-we-are {
+  overflow: hidden;
+  color: $white;
+  background-color: #070707;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../assets/who-we-are-bg.jpg') center / cover;
+  & .container {
+    padding: 0 30px;
+  }
+}
+@include media-breakpoint-down(lg) {
+  .section-who-we-are {
+    background-size: auto;
+    background-position: -150px center;
+  }
+}
+@include media-breakpoint-down(xs) {
+  .section-who-we-are {
+    & .container {
+      padding: 0 20px;
+    }
+  }
+}
+@include media-breakpoint-up(xl) {
+  .section-who-we-are {
+    & .container {
+      padding-left: 120px;
+    }
+  }
 }
 </style>
