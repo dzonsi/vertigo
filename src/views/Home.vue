@@ -11,7 +11,7 @@
         <WhoWeAre ref="whoWeAre"></WhoWeAre>
       </div>
       <div class="section section-what-we-do">
-        Third section ...
+        <WhatWeDo ref="whatWeDo"></WhatWeDo>
       </div>
       <div class="section fp-auto-height"></div>
     </full-page>
@@ -30,6 +30,7 @@ import ScrollIndicator from '@/components/scroll-indicator/ScrollIndicator.vue'
 import Footer from '@/components/footer/Footer.vue'
 import HomeSection from '@/components/home-section/HomeSection.vue'
 import WhoWeAre from '@/components/who-we-are/WhoWeAre.vue'
+import WhatWeDo from '@/components/what-we-do/WhatWeDo.vue'
 
 import { mapMutations } from 'vuex'
 
@@ -42,7 +43,8 @@ export default {
     ScrollIndicator,
     Footer,
     HomeSection,
-    WhoWeAre
+    WhoWeAre,
+    WhatWeDo
   },
   data() {
     return {
@@ -82,7 +84,7 @@ export default {
 </script>
 
 <style lang="scss">
-/* set height of last section to 0px */
+// set height of last section to 0px
 .fp-auto-height {
   &.fp-section,
   & .fp-slide,
@@ -115,7 +117,7 @@ export default {
     url('../assets/who-we-are-bg.jpg') center / cover;
 }
 .section-what-we-do {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url('../assets/what-we-do-bg.jpg') center / cover;
 }
 @include media-breakpoint-down(lg) {
