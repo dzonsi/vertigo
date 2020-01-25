@@ -61,7 +61,7 @@ export default {
       toggleFooter: 'changeFooterStatus'
     }),
     onLeave(origin, destination, direction) {
-      /* animate description in WhoWeAre component */
+      // animate description in WhoWeAre component
       if (
         !this.$refs.whoWeAre.isAnimate &&
         destination.anchor == 'who-we-are'
@@ -69,12 +69,20 @@ export default {
         this.$refs.whoWeAre.changeStatus()
         return
       }
-      /* show footer */
+      // animate description in WhatWeDo component
+      if (
+        !this.$refs.whatWeDo.isAnimate &&
+        destination.anchor == 'what-we-do'
+      ) {
+        this.$refs.whatWeDo.changeStatus()
+        return
+      }
+      // show footer
       if (destination.isLast) {
         this.toggleFooter()
         return
       }
-      /* hide footer */
+      // hide footer
       if (origin.anchor == 'footer') {
         this.toggleFooter()
       }
