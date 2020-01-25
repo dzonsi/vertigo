@@ -2,8 +2,13 @@
   <div class="container">
     <div class="what-we-do">
       <h1 class="navigation-indicator">What we do</h1>
+      <h1
+        class="what-we-do-title"
+        :class="{ 'animate-description': isAnimate }"
+      >
+        We build successful digital products.
+      </h1>
       <div :class="{ 'animate-description': isAnimate }">
-        <h1 class="what-we-do-title">We build successful digital products.</h1>
         <p class="what-we-do-lead">
           Our philosophy is to only work on products where we feel we can
           contribute and collaborate to produce results.
