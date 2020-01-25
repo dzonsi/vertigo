@@ -10,7 +10,7 @@
       <div class="section section-who-we-are">
         <WhoWeAre ref="whoWeAre"></WhoWeAre>
       </div>
-      <div class="section">
+      <div class="section section-what-we-do">
         Third section ...
       </div>
       <div class="section fp-auto-height"></div>
@@ -104,6 +104,16 @@ export default {
   background-color: #070707;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('../assets/who-we-are-bg.jpg') center / cover;
+  & .container {
+    padding: 0 30px;
+  }
+}
+.section-what-we-do {
+  overflow: hidden;
+  color: $white;
+  background-color: #070707;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../assets/what-we-do-bg.jpg') center / cover;
   & .container {
     padding: 0 30px;
   }
