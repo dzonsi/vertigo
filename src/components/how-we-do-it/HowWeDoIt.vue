@@ -114,9 +114,6 @@ export default {
   }
 }
 @include media-breakpoint-down(xs) {
-  .how-we-do-it {
-    padding-top: 100px;
-  }
   .how-we-do-it-link::before {
     left: 0;
   }
