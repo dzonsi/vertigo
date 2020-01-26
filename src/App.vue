@@ -11,10 +11,6 @@
 // import robot font from google fonts
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-body {
-  font-family: 'Roboto', sans-serif;
-}
-
 .app {
   width: 100%;
   height: 100%;
