@@ -13,6 +13,9 @@
       <div class="section section-what-we-do">
         <WhatWeDo ref="whatWeDo"></WhatWeDo>
       </div>
+      <div class="section section-how-we-do-it">
+        <HowWeDoIt ref="howWeDoIt"></HowWeDoIt>
+      </div>
       <div class="section fp-auto-height"></div>
     </full-page>
     <ScrollIndicator></ScrollIndicator>
@@ -31,6 +34,7 @@ import Footer from '@/components/footer/Footer.vue'
 import HomeSection from '@/components/home-section/HomeSection.vue'
 import WhoWeAre from '@/components/who-we-are/WhoWeAre.vue'
 import WhatWeDo from '@/components/what-we-do/WhatWeDo.vue'
+import HowWeDoIt from '@/components/how-we-do-it/HowWeDoIt.vue'
 
 import { mapMutations } from 'vuex'
 
@@ -44,14 +48,15 @@ export default {
     Footer,
     HomeSection,
     WhoWeAre,
-    WhatWeDo
+    WhatWeDo,
+    HowWeDoIt
   },
   data() {
     return {
       options: {
         licenseKey: null,
-        anchors: ['home', 'who-we-are', 'what-we-do', 'footer'],
-        sectionsColor: ['#070707', '#070707', '#070707'],
+        anchors: ['home', 'who-we-are', 'what-we-do', 'how-we-do-it', 'footer'],
+        sectionsColor: ['#070707', '#070707', '#070707', '#070707'],
         onLeave: this.onLeave
       }
     }
@@ -75,6 +80,14 @@ export default {
         destination.anchor == 'what-we-do'
       ) {
         this.$refs.whatWeDo.changeStatus()
+        return
+      }
+      // animate description in HowWeDoIt component
+      if (
+        !this.$refs.howWeDoIt.isAnimate &&
+        destination.anchor == 'how-we-do-it'
+      ) {
+        this.$refs.howWeDoIt.changeStatus()
         return
       }
       // show footer
@@ -103,13 +116,15 @@ export default {
 .section {
   &-home,
   &-who-we-are,
-  &-what-we-do {
+  &-what-we-do,
+  &-how-we-do-it {
     overflow: hidden;
     color: $white;
     background-color: #070707;
   }
   &-who-we-are,
-  &-what-we-do {
+  &-what-we-do,
+  &-how-we-do-it {
     & .container {
       padding: 0 30px;
     }
@@ -128,6 +143,10 @@ export default {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url('../assets/what-we-do-bg.jpg') center / cover;
 }
+.section-how-we-do-it {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('../assets/how-we-do-it-bg.jpg') center / cover;
+}
 @include media-breakpoint-down(lg) {
   .section-who-we-are {
     background-size: auto;
@@ -137,7 +156,8 @@ export default {
 @include media-breakpoint-down(xs) {
   .section {
     &-who-we-are,
-    &-what-we-do {
+    &-what-we-do,
+    &-how-we-do-it {
       & .container {
         padding: 0 20px;
       }
@@ -147,7 +167,8 @@ export default {
 @include media-breakpoint-up(xl) {
   .section {
     &-who-we-are,
-    &-what-we-do {
+    &-what-we-do,
+    &-how-we-do-it {
       & .container {
         padding-left: 120px;
       }
