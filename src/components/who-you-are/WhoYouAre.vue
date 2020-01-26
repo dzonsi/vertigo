@@ -82,6 +82,11 @@ export default {
     font-size: 18px;
   }
 }
+@include media-breakpoint-down(xs) {
+  .who-you-are {
+    padding-top: 100px;
+  }
+}
 @include media-breakpoint-up(xl) {
   .who-you-are {
     width: 70%;
