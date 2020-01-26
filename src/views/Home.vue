@@ -7,6 +7,9 @@
       <div class="section section-home">
         <HomeSection></HomeSection>
       </div>
+      <div class="section section-who-you-are">
+        <WhoYouAre ref="whoYouAre"></WhoYouAre>
+      </div>
       <div class="section section-who-we-are">
         <WhoWeAre ref="whoWeAre"></WhoWeAre>
       </div>
@@ -32,6 +35,7 @@ import SideNavbar from '@/components/side-navbar/SideNavbar.vue'
 import ScrollIndicator from '@/components/scroll-indicator/ScrollIndicator.vue'
 import Footer from '@/components/footer/Footer.vue'
 import HomeSection from '@/components/home-section/HomeSection.vue'
+import WhoYouAre from '@/components/who-you-are/WhoYouAre.vue'
 import WhoWeAre from '@/components/who-we-are/WhoWeAre.vue'
 import WhatWeDo from '@/components/what-we-do/WhatWeDo.vue'
 import HowWeDoIt from '@/components/how-we-do-it/HowWeDoIt.vue'
@@ -47,6 +51,7 @@ export default {
     ScrollIndicator,
     Footer,
     HomeSection,
+    WhoYouAre,
     WhoWeAre,
     WhatWeDo,
     HowWeDoIt
@@ -55,8 +60,15 @@ export default {
     return {
       options: {
         licenseKey: null,
-        anchors: ['home', 'who-we-are', 'what-we-do', 'how-we-do-it', 'footer'],
-        sectionsColor: ['#070707', '#070707', '#070707', '#070707'],
+        anchors: [
+          'home',
+          'who-you-are',
+          'who-we-are',
+          'what-we-do',
+          'how-we-do-it',
+          'footer'
+        ],
+        sectionsColor: ['#070707', '#070707', '#070707', '#070707', '#070707'],
         onLeave: this.onLeave
       }
     }
@@ -66,6 +78,14 @@ export default {
       toggleFooter: 'changeFooterStatus'
     }),
     onLeave(origin, destination, direction) {
+      // animate description in WhoYouAre component
+      if (
+        !this.$refs.whoYouAre.isAnimate &&
+        destination.anchor == 'who-you-are'
+      ) {
+        this.$refs.whoYouAre.changeStatus()
+        return
+      }
       // animate description in WhoWeAre component
       if (
         !this.$refs.whoWeAre.isAnimate &&
@@ -115,6 +135,7 @@ export default {
 }
 .section {
   &-home,
+  &-who-you-are,
   &-who-we-are,
   &-what-we-do,
   &-how-we-do-it {
@@ -122,6 +143,7 @@ export default {
     color: $white;
     background-color: #070707;
   }
+  &-who-you-are,
   &-who-we-are,
   &-what-we-do,
   &-how-we-do-it {
@@ -135,8 +157,12 @@ export default {
   background-position: center center;
   background-size: cover;
 }
+.section-who-you-are {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('../assets/who-you-are-bg.jpg') center / cover;
+}
 .section-who-we-are {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url('../assets/who-we-are-bg.jpg') center / cover;
 }
 .section-what-we-do {
@@ -148,13 +174,14 @@ export default {
     url('../assets/how-we-do-it-bg.jpg') center / cover;
 }
 @include media-breakpoint-down(lg) {
-  .section-who-we-are {
+  .section-how-we-do-it {
     background-size: auto;
     background-position: -150px center;
   }
 }
 @include media-breakpoint-down(xs) {
   .section {
+    &-who-you-are,
     &-who-we-are,
     &-what-we-do,
     &-how-we-do-it {
@@ -166,6 +193,7 @@ export default {
 }
 @include media-breakpoint-up(xl) {
   .section {
+    &-who-you-are,
     &-who-we-are,
     &-what-we-do,
     &-how-we-do-it {
