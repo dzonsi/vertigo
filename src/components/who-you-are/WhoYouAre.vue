@@ -38,7 +38,7 @@ export default {
 
 <style lang="scss">
 .who-you-are {
-  width: 50%;
+  width: 70%;
   padding-top: 170px;
 }
 .navigation-indicator {
@@ -88,9 +88,6 @@ export default {
   }
 }
 @include media-breakpoint-up(xl) {
-  .who-you-are {
-    width: 70%;
-  }
   .who-you-are-lead {
     font-size: 22px;
   }
