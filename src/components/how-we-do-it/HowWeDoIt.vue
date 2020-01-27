@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="how-we-do-it">
-      <h1 class="navigation-indicator">How we do it</h1>
+      <h2 class="navigation-indicator">How we do it</h2>
       <div :class="{ 'animate-description': isAnimate }">
         <p class="how-we-do-it-lead">
           You haven’t realized it yet, but we have already walked you through
@@ -14,7 +14,7 @@
           <br />
           Then we do the impossible!
         </p>
-        <a class="how-we-do-it-link btn" href="javascript:void(0)">Explore</a>
+        <router-link to="/" class="how-we-do-it-link btn">Explore</router-link>
       </div>
     </div>
   </div>

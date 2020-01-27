@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="who-you-are">
-      <h1 class="navigation-indicator">Who you are</h1>
+      <h2 class="navigation-indicator">Who you are</h2>
       <p class="who-you-are-lead" :class="{ 'animate-description': isAnimate }">
         You are responsible for innovation in your company.
         <br />
