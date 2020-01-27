@@ -2,8 +2,8 @@
   <div class="footer-copyright">
     ©2020 Nikola. All Rights Reserved.
     <br class="d-sm-none" />
-    <a href="javascript:void(0)" class="footer-copyright-link"
-      >Privacy Policy</a
+    <router-link to="/" class="footer-copyright-link"
+      >Privacy Policy</router-link
     >
   </div>
 </template>
