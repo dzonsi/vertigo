@@ -68,7 +68,7 @@ export default {
           'how-we-do-it',
           'footer'
         ],
-        sectionsColor: ['#070707', '#070707', '#070707', '#070707', '#070707'],
+        sectionsColor: ['#070707', '#34334d', '#423e3d', '#532d2d', '#364a49'],
         onLeave: this.onLeave
       }
     }
