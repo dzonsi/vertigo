@@ -1,7 +1,7 @@
 <template>
   <footer class="footer" :class="{ 'is-reveal': footerIsShow }">
     <h1 class="footer-title">
-      <a href="javascript:void(0)">Contact us</a>
+      <router-link to="/">Contact us</router-link>
     </h1>
     <div class="footer-top">
       <div class="container-fluid">
@@ -32,7 +32,13 @@
           ></FooterInfoColumn>
         </div>
       </div>
-      <LogoSmall class="footer-top-logo"></LogoSmall>
+      <img
+        class="footer-top-logo"
+        src="../../assets/logo-small.svg"
+        alt="Vertigo logo"
+        width="60"
+        height="36"
+      />
       <div class="footer-social">
         <ul class="footer-social-links">
           <SocialLinksItem>
@@ -59,7 +65,6 @@
 
 <script>
 import FooterInfoColumn from '@/components/footer/FooterInfoColumn.vue'
-import LogoSmall from '@/components/shared/LogoSmall.vue'
 import SocialLinksItem from '@/components/shared/SocialLinksItem.vue'
 import FooterCopyright from '@/components/footer/FooterCopyright.vue'
 import { mapState } from 'vuex'
@@ -68,7 +73,6 @@ export default {
   name: 'Footer',
   components: {
     FooterInfoColumn,
-    LogoSmall,
     SocialLinksItem,
     FooterCopyright
   },
@@ -141,7 +145,9 @@ export default {
 }
 .footer-top-logo {
   display: block;
-  margin: auto;
+  width: 60px;
+  height: auto;
+  margin: 0 auto;
 }
 .footer-social-links {
   padding: 15px;
