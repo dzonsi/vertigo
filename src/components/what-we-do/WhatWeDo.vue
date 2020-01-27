@@ -1,13 +1,13 @@
 <template>
   <div class="container">
     <div class="what-we-do">
-      <h1 class="navigation-indicator">What we do</h1>
-      <h1
+      <h2 class="navigation-indicator">What we do</h2>
+      <h3
         class="what-we-do-title"
         :class="{ 'animate-description': isAnimate }"
       >
         We build successful digital products.
-      </h1>
+      </h3>
       <div :class="{ 'animate-description': isAnimate }">
         <p class="what-we-do-lead">
           Our philosophy is to only work on products where we feel we can
@@ -19,7 +19,7 @@
           scale the perfect solution for your specific business need or
           opportunity.
         </p>
-        <a class="what-we-do-link btn" href="javascript:void(0)">Explore</a>
+        <router-link to="/" class="what-we-do-link btn">Explore</router-link>
       </div>
     </div>
   </div>
