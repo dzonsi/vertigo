@@ -9,14 +9,12 @@
       <p>{{ location }}</p>
     </div>
     <div class="footer-info-column">
-      <a href="javascript:void(0)" class="footer-info-column-link">
-        <v-icon name="mobile-alt" />
-        {{ phone }}
-      </a>
-      <a href="javascript:void(0)" class="footer-info-column-link">
-        <v-icon name="envelope" />
-        {{ email }}
-      </a>
+      <router-link to="/" class="footer-info-column-link"
+        ><v-icon name="mobile-alt" /> {{ phone }}</router-link
+      >
+      <router-link to="/" class="footer-info-column-link"
+        ><v-icon name="envelope" /> {{ email }}</router-link
+      >
     </div>
   </div>
 </template>
