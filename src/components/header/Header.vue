@@ -2,19 +2,21 @@
   <header class="header">
     <div class="navbar-header" data-aos="fade-down" data-aos-once="true">
       <router-link to="/" class="navbar-link">
-        <LogoSmall></LogoSmall>
+        <img
+          class="navbar-link-image"
+          src="../../assets/logo-small.svg"
+          alt="Vertigo logo"
+          width="60"
+          height="36"
+        />
       </router-link>
     </div>
   </header>
 </template>
 
 <script>
-import LogoSmall from '@/components/shared/LogoSmall.vue'
 export default {
-  name: 'Header',
-  components: {
-    LogoSmall
-  }
+  name: 'Header'
 }
 </script>
 
@@ -25,6 +27,7 @@ export default {
   background-color: transparent;
   position: fixed;
   top: 0;
+  left: 0;
   transition: all 0.2s;
   z-index: 4;
 }
@@ -44,7 +47,7 @@ export default {
   position: absolute;
   top: -20px;
   left: -20px;
-  & svg {
+  &-image {
     position: absolute;
     top: 20px;
     left: 20px;
