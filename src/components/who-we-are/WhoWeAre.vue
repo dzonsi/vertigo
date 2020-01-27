@@ -8,7 +8,7 @@
           exceptional digital solutions that delight and impress.
         </p>
         <h1 class="who-we-are-title">Most of all, we love what we do.</h1>
-        <a class="who-we-are-link btn" href="javascript:void(0)">Explore</a>
+        <router-link to="/" class="who-we-are-link btn">Explore</router-link>
       </div>
     </div>
   </div>
