@@ -1,13 +1,13 @@
 <template>
   <div class="container">
     <div class="who-we-are">
-      <h1 class="navigation-indicator">Who we are</h1>
+      <h2 class="navigation-indicator">Who we are</h2>
       <div :class="{ 'animate-description': isAnimate }">
         <p class="who-we-are-lead">
           We are driven, we are talented, and we are on a mission: to build
           exceptional digital solutions that delight and impress.
         </p>
-        <h1 class="who-we-are-title">Most of all, we love what we do.</h1>
+        <h3 class="who-we-are-title">Most of all, we love what we do.</h3>
         <router-link to="/" class="who-we-are-link btn">Explore</router-link>
       </div>
     </div>
