@@ -8,16 +8,16 @@
         <HomeSection></HomeSection>
       </div>
       <div class="section section-who-you-are">
-        <WhoYouAre ref="whoYouAre"></WhoYouAre>
+        <WhoYouAre></WhoYouAre>
       </div>
       <div class="section section-who-we-are">
-        <WhoWeAre ref="whoWeAre"></WhoWeAre>
+        <WhoWeAre></WhoWeAre>
       </div>
       <div class="section section-what-we-do">
-        <WhatWeDo ref="whatWeDo"></WhatWeDo>
+        <WhatWeDo></WhatWeDo>
       </div>
       <div class="section section-how-we-do-it">
-        <HowWeDoIt ref="howWeDoIt"></HowWeDoIt>
+        <HowWeDoIt></HowWeDoIt>
       </div>
       <div class="section fp-auto-height"></div>
     </full-page>
@@ -40,6 +40,7 @@ import WhoWeAre from '@/components/who-we-are/WhoWeAre.vue'
 import WhatWeDo from '@/components/what-we-do/WhatWeDo.vue'
 import HowWeDoIt from '@/components/how-we-do-it/HowWeDoIt.vue'
 
+import { mapState } from 'vuex'
 import { mapMutations } from 'vuex'
 
 export default {
@@ -73,41 +74,41 @@ export default {
       }
     }
   },
+  computed: mapState([
+    'whoYouAreIsAnimate',
+    'whoWeAreIsAnimate',
+    'whatWeDoIsAnimate',
+    'howWeDoItIsAnimate'
+  ]),
   methods: {
     ...mapMutations({
       toggleFooter: 'changeFooterStatus'
     }),
+    ...mapMutations([
+      'changeWhoYouAreStatus',
+      'changeWhoWeAreStatus',
+      'changeWhatWeDoStatus',
+      'changeHowWeDoItStatus'
+    ]),
     onLeave(origin, destination, direction) {
       // animate description in WhoYouAre component
-      if (
-        !this.$refs.whoYouAre.isAnimate &&
-        destination.anchor == 'who-you-are'
-      ) {
-        this.$refs.whoYouAre.changeStatus()
+      if (!this.whoYouAreIsAnimate && destination.anchor == 'who-you-are') {
+        this.changeWhoYouAreStatus()
         return
       }
       // animate description in WhoWeAre component
-      if (
-        !this.$refs.whoWeAre.isAnimate &&
-        destination.anchor == 'who-we-are'
-      ) {
-        this.$refs.whoWeAre.changeStatus()
+      if (!this.whoWeAreIsAnimate && destination.anchor == 'who-we-are') {
+        this.changeWhoWeAreStatus()
         return
       }
       // animate description in WhatWeDo component
-      if (
-        !this.$refs.whatWeDo.isAnimate &&
-        destination.anchor == 'what-we-do'
-      ) {
-        this.$refs.whatWeDo.changeStatus()
+      if (!this.whatWeDoIsAnimate && destination.anchor == 'what-we-do') {
+        this.changeWhatWeDoStatus()
         return
       }
       // animate description in HowWeDoIt component
-      if (
-        !this.$refs.howWeDoIt.isAnimate &&
-        destination.anchor == 'how-we-do-it'
-      ) {
-        this.$refs.howWeDoIt.changeStatus()
+      if (!this.howWeDoItIsAnimate && destination.anchor == 'how-we-do-it') {
+        this.changeHowWeDoItStatus()
         return
       }
       // show footer
