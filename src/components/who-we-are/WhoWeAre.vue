@@ -2,7 +2,7 @@
   <div class="container">
     <div class="who-we-are">
       <h2 class="navigation-indicator">Who we are</h2>
-      <div :class="{ 'animate-description': isAnimate }">
+      <div :class="{ 'animate-description': whoWeAreIsAnimate }">
         <p class="who-we-are-lead">
           We are driven, we are talented, and we are on a mission: to build
           exceptional digital solutions that delight and impress.
@@ -15,18 +15,11 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'WhoWeAre',
-  data() {
-    return {
-      isAnimate: false
-    }
-  },
-  methods: {
-    changeStatus() {
-      this.isAnimate = true
-    }
-  }
+  computed: mapState(['whoWeAreIsAnimate'])
 }
 </script>
 

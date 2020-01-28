@@ -2,14 +2,20 @@
   <div class="container">
     <div class="who-you-are">
       <h2 class="navigation-indicator">Who you are</h2>
-      <p class="who-you-are-lead" :class="{ 'animate-description': isAnimate }">
+      <p
+        class="who-you-are-lead"
+        :class="{ 'animate-description': whoYouAreIsAnimate }"
+      >
         You are responsible for innovation in your company.
         <br />
         Or, you are involved in your company's digital transformation efforts.
         <br />
         Or perhaps, you might have a brand new product idea.
       </p>
-      <p class="who-you-are-lead" :class="{ 'animate-description': isAnimate }">
+      <p
+        class="who-you-are-lead"
+        :class="{ 'animate-description': whoYouAreIsAnimate }"
+      >
         Whichever it is, and wherever you are in the process, we can help you
         out - by working with you to discover areas of focus and business value,
         ideating and planning solutions, building and scaling products, and
@@ -21,18 +27,11 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'WhoYouAre',
-  data() {
-    return {
-      isAnimate: false
-    }
-  },
-  methods: {
-    changeStatus() {
-      this.isAnimate = true
-    }
-  }
+  computed: mapState(['whoYouAreIsAnimate'])
 }
 </script>
 

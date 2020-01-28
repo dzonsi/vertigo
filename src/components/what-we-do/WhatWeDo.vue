@@ -4,11 +4,11 @@
       <h2 class="navigation-indicator">What we do</h2>
       <h3
         class="what-we-do-title"
-        :class="{ 'animate-description': isAnimate }"
+        :class="{ 'animate-description': whatWeDoIsAnimate }"
       >
         We build successful digital products.
       </h3>
-      <div :class="{ 'animate-description': isAnimate }">
+      <div :class="{ 'animate-description': whatWeDoIsAnimate }">
         <p class="what-we-do-lead">
           Our philosophy is to only work on products where we feel we can
           contribute and collaborate to produce results.
@@ -26,18 +26,11 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'WhatWeDo',
-  data() {
-    return {
-      isAnimate: false
-    }
-  },
-  methods: {
-    changeStatus() {
-      this.isAnimate = true
-    }
-  }
+  computed: mapState(['whatWeDoIsAnimate'])
 }
 </script>
 

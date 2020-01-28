@@ -2,7 +2,7 @@
   <div class="container">
     <div class="how-we-do-it">
       <h2 class="navigation-indicator">How we do it</h2>
-      <div :class="{ 'animate-description': isAnimate }">
+      <div :class="{ 'animate-description': howWeDoItIsAnimate }">
         <p class="how-we-do-it-lead">
           You haven’t realized it yet, but we have already walked you through
           all of our phases. Wait, what?
@@ -21,18 +21,11 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'HowWeDoIt',
-  data() {
-    return {
-      isAnimate: false
-    }
-  },
-  methods: {
-    changeStatus() {
-      this.isAnimate = true
-    }
-  }
+  computed: mapState(['howWeDoItIsAnimate'])
 }
 </script>
 
