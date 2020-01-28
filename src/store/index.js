@@ -6,7 +6,11 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     sideNavbarIsShow: false,
-    footerIsShow: false
+    footerIsShow: false,
+    whoYouAreIsAnimate: false,
+    whoWeAreIsAnimate: false,
+    whatWeDoIsAnimate: false,
+    howWeDoItIsAnimate: false
   },
   getters: {},
   mutations: {
@@ -15,6 +19,18 @@ export default new Vuex.Store({
     },
     changeFooterStatus(state) {
       state.footerIsShow = !state.footerIsShow
+    },
+    changeWhoYouAreStatus(state) {
+      state.whoYouAreIsAnimate = true
+    },
+    changeWhoWeAreStatus(state) {
+      state.whoWeAreIsAnimate = true
+    },
+    changeWhatWeDoStatus(state) {
+      state.whatWeDoIsAnimate = true
+    },
+    changeHowWeDoItStatus(state) {
+      state.howWeDoItIsAnimate = true
     }
   },
   actions: {},
