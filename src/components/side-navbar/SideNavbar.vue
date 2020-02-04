@@ -1,32 +1,32 @@
 <template>
   <div class="side-navbar" :class="{ 'is-show': sideNavbarIsShow }">
     <ul class="side-navbar-nav">
-      <TopNavItem :isActive="true">home</TopNavItem>
-      <TopNavItem>who we are</TopNavItem>
-      <TopNavItem>how we do it</TopNavItem>
-      <TopNavItem>careers</TopNavItem>
-      <TopNavItem>contact</TopNavItem>
+      <top-nav-item :isActive="true">home</top-nav-item>
+      <top-nav-item>who we are</top-nav-item>
+      <top-nav-item>how we do it</top-nav-item>
+      <top-nav-item>careers</top-nav-item>
+      <top-nav-item>contact</top-nav-item>
       <div class="side-navbar-bottom-nav">
         <ul class="social-links">
-          <SocialLinksItem>
+          <social-links-item>
             <v-icon name="brands/facebook-f" scale="1.3" />
-          </SocialLinksItem>
-          <SocialLinksItem>
+          </social-links-item>
+          <social-links-item>
             <v-icon name="brands/linkedin-in" scale="1.3" />
-          </SocialLinksItem>
-          <SocialLinksItem>
+          </social-links-item>
+          <social-links-item>
             <v-icon name="brands/github" scale="1.3" />
-          </SocialLinksItem>
-          <SocialLinksItem>
+          </social-links-item>
+          <social-links-item>
             <v-icon name="brands/behance" scale="1.3" />
-          </SocialLinksItem>
-          <SocialLinksItem>
+          </social-links-item>
+          <social-links-item>
             <v-icon name="brands/instagram" scale="1.3" />
-          </SocialLinksItem>
+          </social-links-item>
         </ul>
         <p class="side-nav-copyright">©2020 Nikola. All Rights Reserved.</p>
       </div>
-      <SideNavbarClose></SideNavbarClose>
+      <side-navbar-close></side-navbar-close>
     </ul>
   </div>
 </template>

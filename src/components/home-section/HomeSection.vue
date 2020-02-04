@@ -1,8 +1,8 @@
 <template>
   <div class="hero">
-    <HeroTitle></HeroTitle>
-    <HeroClients></HeroClients>
-    <HeroEarth></HeroEarth>
+    <hero-title></hero-title>
+    <hero-clients></hero-clients>
+    <hero-earth></hero-earth>
   </div>
 </template>
 

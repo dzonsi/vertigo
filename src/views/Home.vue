@@ -2,7 +2,7 @@
   <div class="home">
     <Header></Header>
     <menu-button></menu-button>
-    <SideNavbar></SideNavbar>
+    <side-navbar></side-navbar>
     <full-page
       id="fullpage"
       ref="fullpage"
@@ -10,23 +10,23 @@
       :skip-init="true"
     >
       <div class="section section-home">
-        <HomeSection></HomeSection>
+        <home-section></home-section>
       </div>
       <div class="section section-who-you-are">
-        <WhoYouAre></WhoYouAre>
+        <who-you-are></who-you-are>
       </div>
       <div class="section section-who-we-are">
-        <WhoWeAre></WhoWeAre>
+        <who-we-are></who-we-are>
       </div>
       <div class="section section-what-we-do">
-        <WhatWeDo></WhatWeDo>
+        <what-we-do></what-we-do>
       </div>
       <div class="section section-how-we-do-it">
-        <HowWeDoIt></HowWeDoIt>
+        <how-we-do-it></how-we-do-it>
       </div>
       <div class="section fp-auto-height"></div>
     </full-page>
-    <ScrollIndicator></ScrollIndicator>
+    <scroll-indicator></scroll-indicator>
     <Footer></Footer>
   </div>
 </template>
@@ -34,8 +34,8 @@
 <script>
 // @ is an alias to /src
 
-import MenuButton from '@/components/menu-button/MenuButton.vue'
 import Header from '@/components/header/Header.vue'
+import MenuButton from '@/components/menu-button/MenuButton.vue'
 import SideNavbar from '@/components/side-navbar/SideNavbar.vue'
 import ScrollIndicator from '@/components/scroll-indicator/ScrollIndicator.vue'
 import Footer from '@/components/footer/Footer.vue'

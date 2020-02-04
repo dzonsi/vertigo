@@ -6,30 +6,30 @@
     <div class="footer-top">
       <div class="container-fluid">
         <div class="footer-info row">
-          <FooterInfoColumn
+          <footer-info-column
             city="Belgrade"
             name="Fantasy d.o.o."
             address="Fantasy boulevard 33"
             location="11000 Belgrade, Serbia"
             phone="+381 60 123 456"
             email="office@fantasydoo.com"
-          ></FooterInfoColumn>
-          <FooterInfoColumn
+          ></footer-info-column>
+          <footer-info-column
             city="Milano"
             name="ACM company"
             address="Unknown Avenue 7"
             location="20100 Milano, Italy"
             phone="+39 12 345 6789"
             email="office@acmdoo.com"
-          ></FooterInfoColumn>
-          <FooterInfoColumn
+          ></footer-info-column>
+          <footer-info-column
             city="Green Bay"
             name="Packers Inc."
             address="1265 Lombardi Ave"
             location="54304 Green Bay, WI"
             phone="+1 920 569-7500"
             email="office@greenbay.com"
-          ></FooterInfoColumn>
+          ></footer-info-column>
         </div>
       </div>
       <img
@@ -41,25 +41,25 @@
       />
       <div class="footer-social">
         <ul class="footer-social-links">
-          <SocialLinksItem>
+          <social-links-item>
             <v-icon name="brands/facebook-f" scale="1.3" />
-          </SocialLinksItem>
-          <SocialLinksItem>
+          </social-links-item>
+          <social-links-item>
             <v-icon name="brands/linkedin-in" scale="1.3" />
-          </SocialLinksItem>
-          <SocialLinksItem>
+          </social-links-item>
+          <social-links-item>
             <v-icon name="brands/github" scale="1.3" />
-          </SocialLinksItem>
-          <SocialLinksItem>
+          </social-links-item>
+          <social-links-item>
             <v-icon name="brands/behance" scale="1.3" />
-          </SocialLinksItem>
-          <SocialLinksItem>
+          </social-links-item>
+          <social-links-item>
             <v-icon name="brands/instagram" scale="1.3" />
-          </SocialLinksItem>
+          </social-links-item>
         </ul>
       </div>
     </div>
-    <FooterCopyright></FooterCopyright>
+    <footer-copyright></footer-copyright>
   </footer>
 </template>
 
