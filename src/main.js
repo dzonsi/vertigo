@@ -23,8 +23,19 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 new Vue({
-  created() {
-    AOS.init()
+  mounted() {
+    // add loading end class for animation end
+    const loadingImage = document.getElementById('loading-image')
+    loadingImage.classList.add('loading-end')
+    // change background color of whole container
+    const loadingContainer = document.getElementById('loading-container')
+    loadingContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.1)'
+    // init AOS for synchronous animations
+    // remove loadingContainer
+    setTimeout(function() {
+      AOS.init()
+      loadingContainer.parentNode.removeChild(loadingContainer)
+    }, 1000)
   },
   router,
   store,
