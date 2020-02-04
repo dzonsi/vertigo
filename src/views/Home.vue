@@ -3,7 +3,12 @@
     <Header></Header>
     <menu-button></menu-button>
     <SideNavbar></SideNavbar>
-    <full-page ref="fullpage" :options="options" id="fullpage">
+    <full-page
+      id="fullpage"
+      ref="fullpage"
+      :options="options"
+      :skip-init="true"
+    >
       <div class="section section-home">
         <HomeSection></HomeSection>
       </div>
@@ -121,6 +126,12 @@ export default {
         this.toggleFooter()
       }
     }
+  },
+  mounted() {
+    // init fullpage if screen is more than 575 px width
+    if (window.innerWidth > 575) {
+      this.$refs.fullpage.init()
+    }
   }
 }
 </script>
@@ -154,25 +165,25 @@ export default {
   }
 }
 .section-home {
-  background-image: url('../assets/earth.jpg');
+  background-image: url('../assets/images/earth.jpg');
   background-position: center center;
   background-size: cover;
 }
 .section-who-you-are {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('../assets/who-you-are-bg.jpg') center / cover;
+    url('../assets/images/who-you-are-bg.jpg') center / cover;
 }
 .section-who-we-are {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('../assets/who-we-are-bg.jpg') center / cover;
+    url('../assets/images/who-we-are-bg.jpg') center / cover;
 }
 .section-what-we-do {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('../assets/what-we-do-bg.jpg') center / cover;
+    url('../assets/images/what-we-do-bg.jpg') center / cover;
 }
 .section-how-we-do-it {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('../assets/how-we-do-it-bg.jpg') center / cover;
+    url('../assets/images/how-we-do-it-bg.jpg') center / cover;
 }
 @include media-breakpoint-down(lg) {
   .section-how-we-do-it {

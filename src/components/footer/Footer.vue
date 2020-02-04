@@ -34,7 +34,7 @@
       </div>
       <img
         class="footer-top-logo"
-        src="../../assets/logo-small.svg"
+        src="../../assets/images/logo-small.svg"
         alt="Vertigo logo"
         width="60"
         height="36"

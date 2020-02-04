@@ -12,7 +12,7 @@ export default {
 .scroll-indicator {
   width: 30px;
   height: 47px;
-  background-image: url('../../assets/mouse.png');
+  background-image: url('../../assets/images/mouse.png');
   background-size: cover;
   animation: animate-mouse 2s infinite;
   position: fixed;

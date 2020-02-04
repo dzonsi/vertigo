@@ -20,7 +20,7 @@ export default {
     height: 590px;
     content: '';
     margin: 0 auto;
-    background-image: url('../../assets/planet.jpg');
+    background-image: url('../../assets/images/planet.jpg');
     background-size: cover;
     border-radius: 100%;
     animation: animate-earth 15s linear both infinite;
