@@ -5,7 +5,7 @@ module.exports = {
       sass: {
         prependData: `
      @import "./node_modules/bootstrap/scss/_functions.scss";
-     @import "@/styles/_variables.scss";
+     @import "@/assets/styles/_variables.scss";
      @import "./node_modules/bootstrap/scss/_mixins.scss";
     `
       }

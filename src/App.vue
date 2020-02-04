@@ -6,7 +6,7 @@
 
 <style lang="scss">
 // import custom bootstrap for whole app
-@import './styles/custom-bootstrap';
+@import './assets/styles/custom-bootstrap';
 
 // import robot font from google fonts
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
