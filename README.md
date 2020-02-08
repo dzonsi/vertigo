@@ -1,4 +1,6 @@
-# vertigo
+# Vertigo
+
+Vue.js app with Vuex, vue-fullpage, vue-awesome, Bootstrap 4 and AOS.
 
 ## Project setup
 ```
