@@ -83,7 +83,8 @@ export default {
     'whoYouAreIsAnimate',
     'whoWeAreIsAnimate',
     'whatWeDoIsAnimate',
-    'howWeDoItIsAnimate'
+    'howWeDoItIsAnimate',
+    'fullpage'
   ]),
   methods: {
     ...mapMutations({
@@ -93,7 +94,8 @@ export default {
       'changeWhoYouAreStatus',
       'changeWhoWeAreStatus',
       'changeWhatWeDoStatus',
-      'changeHowWeDoItStatus'
+      'changeHowWeDoItStatus',
+      'changeFullpage'
     ]),
     onLeave(origin, destination, direction) {
       // animate description in WhoYouAre component
@@ -129,8 +131,12 @@ export default {
   },
   mounted() {
     // init fullpage if screen is more than 575 px width
+    // or add no-fullpage class to body
     if (window.innerWidth > 575) {
+      this.changeFullpage()
       this.$refs.fullpage.init()
+    } else {
+      document.body.classList.add('no-fullpage')
     }
   }
 }
