@@ -10,7 +10,8 @@ export default new Vuex.Store({
     whoYouAreIsAnimate: false,
     whoWeAreIsAnimate: false,
     whatWeDoIsAnimate: false,
-    howWeDoItIsAnimate: false
+    howWeDoItIsAnimate: false,
+    fullpage: false
   },
   getters: {},
   mutations: {
@@ -31,6 +32,9 @@ export default new Vuex.Store({
     },
     changeHowWeDoItStatus(state) {
       state.howWeDoItIsAnimate = true
+    },
+    changeFullpage(state) {
+      state.fullpage = true
     }
   },
   actions: {},
