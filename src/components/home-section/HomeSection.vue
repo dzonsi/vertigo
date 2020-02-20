@@ -22,8 +22,10 @@ export default {
   },
   computed: mapState(['fullpage']),
   mounted() {
-    var height = window.innerHeight
-    this.$el.parentElement.style.height = `${height}px`
+    if (!this.fullpage) {
+      var height = window.innerHeight
+      this.$el.parentElement.style.height = `${height}px`
+    }
   }
 }
 </script>
