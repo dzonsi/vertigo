@@ -2,7 +2,10 @@
   <div class="container">
     <div class="how-we-do-it">
       <h2 class="navigation-indicator">How we do it</h2>
-      <div :class="{ 'animate-description': howWeDoItIsAnimate }">
+      <div
+        id="how-we-do-it-aos"
+        :class="{ 'animate-description': howWeDoItIsAnimate }"
+      >
         <p class="how-we-do-it-lead">
           You haven’t realized it yet, but we have already walked you through
           all of our phases. Wait, what?
@@ -25,7 +28,14 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'HowWeDoIt',
-  computed: mapState(['howWeDoItIsAnimate'])
+  computed: mapState(['howWeDoItIsAnimate']),
+  mounted() {
+    if (window.innerWidth < 576) {
+      var e = document.getElementById('how-we-do-it-aos')
+      e.setAttribute('data-aos', 'zoom-in')
+      e.setAttribute('data-aos-once', true)
+    }
+  }
 }
 </script>
 

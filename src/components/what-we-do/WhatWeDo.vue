@@ -8,7 +8,10 @@
       >
         We build successful digital products.
       </h3>
-      <div :class="{ 'animate-description': whatWeDoIsAnimate }">
+      <div
+        id="what-we-do-aos"
+        :class="{ 'animate-description': whatWeDoIsAnimate }"
+      >
         <p class="what-we-do-lead">
           Our philosophy is to only work on products where we feel we can
           contribute and collaborate to produce results.
@@ -30,7 +33,17 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'WhatWeDo',
-  computed: mapState(['whatWeDoIsAnimate'])
+  computed: mapState(['whatWeDoIsAnimate']),
+  mounted() {
+    if (window.innerWidth < 576) {
+      var div = document.getElementById('what-we-do-aos')
+      div.setAttribute('data-aos', 'zoom-in')
+      div.setAttribute('data-aos-once', true)
+      var h3 = document.getElementsByClassName('what-we-do-title')
+      h3[0].setAttribute('data-aos', 'zoom-in')
+      h3[0].setAttribute('data-aos-once', true)
+    }
+  }
 }
 </script>
 

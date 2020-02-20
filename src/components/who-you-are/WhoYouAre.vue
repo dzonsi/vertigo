@@ -31,7 +31,16 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'WhoYouAre',
-  computed: mapState(['whoYouAreIsAnimate'])
+  computed: mapState(['whoYouAreIsAnimate', 'fullpage']),
+  mounted() {
+    if (window.innerWidth < 576) {
+      var elements = document.getElementsByClassName('who-you-are-lead')
+      elements.forEach(e => {
+        e.setAttribute('data-aos', 'zoom-in')
+        e.setAttribute('data-aos-once', true)
+      })
+    }
+  }
 }
 </script>
 

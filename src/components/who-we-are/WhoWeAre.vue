@@ -2,7 +2,10 @@
   <div class="container">
     <div class="who-we-are">
       <h2 class="navigation-indicator">Who we are</h2>
-      <div :class="{ 'animate-description': whoWeAreIsAnimate }">
+      <div
+        id="who-we-are-aos"
+        :class="{ 'animate-description': whoWeAreIsAnimate }"
+      >
         <p class="who-we-are-lead">
           We are driven, we are talented, and we are on a mission: to build
           exceptional digital solutions that delight and impress.
@@ -19,7 +22,14 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'WhoWeAre',
-  computed: mapState(['whoWeAreIsAnimate'])
+  computed: mapState(['whoWeAreIsAnimate']),
+  mounted() {
+    if (window.innerWidth < 576) {
+      var e = document.getElementById('who-we-are-aos')
+      e.setAttribute('data-aos', 'zoom-in')
+      e.setAttribute('data-aos-once', true)
+    }
+  }
 }
 </script>
 
