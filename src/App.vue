@@ -11,6 +11,10 @@
 // import robot font from google fonts
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+// import shared scss for
+// set-up with no fullpage
+@import './assets/styles/shared';
+
 .app {
   width: 100%;
   height: 100%;
