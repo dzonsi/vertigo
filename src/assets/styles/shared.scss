@@ -1,0 +1,10 @@
+// footer
+.no-fullpage {
+  & .footer {
+    position: static;
+    top: 0;
+    &::before {
+      display: none;
+    }
+  }
+}
