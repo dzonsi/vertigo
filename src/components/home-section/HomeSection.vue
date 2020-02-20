@@ -1,7 +1,7 @@
 <template>
   <div class="hero">
     <hero-title></hero-title>
-    <hero-clients></hero-clients>
+    <hero-clients v-if="fullpage"></hero-clients>
     <hero-earth></hero-earth>
   </div>
 </template>
@@ -11,12 +11,19 @@ import HeroTitle from '@/components/home-section/HeroTitle.vue'
 import HeroEarth from '@/components/home-section/HeroEarth.vue'
 import HeroClients from '@/components/home-section/HeroClients.vue'
 
+import { mapState } from 'vuex'
+
 export default {
   name: 'HomeSection',
   components: {
     HeroTitle,
     HeroEarth,
     HeroClients
+  },
+  computed: mapState(['fullpage']),
+  mounted() {
+    var height = window.innerHeight
+    this.$el.parentElement.style.height = `${height}px`
   }
 }
 </script>
