@@ -12,6 +12,7 @@
       <div class="section section-home">
         <home-section></home-section>
       </div>
+      <clients v-if="!fullpage"></clients>
       <div class="section section-who-you-are">
         <who-you-are></who-you-are>
       </div>
@@ -44,6 +45,7 @@ import WhoYouAre from '@/components/who-you-are/WhoYouAre.vue'
 import WhoWeAre from '@/components/who-we-are/WhoWeAre.vue'
 import WhatWeDo from '@/components/what-we-do/WhatWeDo.vue'
 import HowWeDoIt from '@/components/how-we-do-it/HowWeDoIt.vue'
+import Clients from '@/components/shared/Clients'
 
 import { mapState } from 'vuex'
 import { mapMutations } from 'vuex'
@@ -60,7 +62,8 @@ export default {
     WhoYouAre,
     WhoWeAre,
     WhatWeDo,
-    HowWeDoIt
+    HowWeDoIt,
+    Clients
   },
   data() {
     return {
