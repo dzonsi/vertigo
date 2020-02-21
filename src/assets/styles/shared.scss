@@ -1,3 +1,25 @@
+// header
+.no-fullpage {
+  & .header {
+    z-index: 6;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+@include media-breakpoint-up(sm) {
+  .no-fullpage {
+    & .header {
+      background-color: transparent;
+    }
+  }
+}
+
+// sidebar-toggle
+.no-fullpage {
+  & .sidebar-toggle {
+    z-index: 6;
+  }
+}
+
 // footer
 .no-fullpage {
   & .footer {
